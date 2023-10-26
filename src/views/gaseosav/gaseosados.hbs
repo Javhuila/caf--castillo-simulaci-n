@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Sabor</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each litungas}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{nombre_gaseosa}}</td>
+                            <td>{{sabor_gaseosa}}</td>
+                            <td>{{marca_gaseosa}}</td>
+                            <td>{{cantidad_gaseosa}}</td>
+                            <td>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

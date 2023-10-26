@@ -1,0 +1,118 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <center><h1>Gaseosas XD</h1></center>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <form action="creargaseosa" method="POST">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="nombre_gaseosa" placeholder="Nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="sabor_gaseosa" placeholder="Sabor">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="marca_gaseosa" placeholder="Marca">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="cantidad_gaseosa" placeholder="Cantidad">
+                </div>                
+                <center><button type="submit" class="btn btn-secondary">Agregar</button></center>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table id="gastable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Sabor</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Cantidad</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each listarTodogas}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{nombre_gaseosa}}</td>
+                            <td>{{sabor_gaseosa}}</td>
+                            <td>{{marca_gaseosa}}</td>
+                            <td>{{cantidad_gaseosa}}</td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modfigaseosa{{id}}">
+                                Modificar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modfigaseosa{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <form action="modfgaseosa/{{id}}" method="POST">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">¿Quieres hacer algún cambio?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" value="{{nombre_gaseosa}}" name="nombre_gaseosa" placeholder="Nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" value="{{sabor_gaseosa}}" name="sabor_gaseosa" placeholder="Sabor">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" value="{{marca_gaseosa}}" name="marca_gaseosa" placeholder="Marca">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" value="{{cantidad_gaseosa}}" name="cantidad_gaseosa" placeholder="Cantidad">
+                                                </div>                
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atrás</button>
+                                            <button type="submit" class="btn btn-success">Modificar</button>                                    
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimgaseosa{{id}}">
+                                Eliminar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="elimgaseosa{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Estás seguro que quieres eliminar a {{nombre_gaseosa}}?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atrás</button>
+                                        <a class="btn btn-danger" href="elimgaseosa/{{id}}">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="fondo">
+        <canvas id="grafigas" width="600" height="200"></canvas>
+    </div>
+</div>
