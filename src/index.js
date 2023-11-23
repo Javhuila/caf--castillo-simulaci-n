@@ -74,6 +74,10 @@ app.use('/liqgaseosa',require('./routes/gaseosarr/gaseosados'));
 app.use('/liqagua',require('./routes/aguar/aguados'));
 app.use('/liqjugo',require('./routes/jugor/jugodos'));
 
+// Rutas de Simulación corte 3 - Café Castillo //
+app.use('/cafecastillo',require('./routes/castillorr/castillo'));
+app.use('/ini',require('./routes/castillorr/inicastillo'));
+
 //De un trabajo de recordatorio - express con Postman //
 app.use('/pedididi',require('./routes/pedidor/pedidodos'));
 
@@ -92,5 +96,6 @@ app.unsubscribe(express.static(path.join(__dirname,'public')));
 //Inicia el server
 app.listen(app.get('port'),()=>{
     console.log('Puerto subido por el N°',app.get('port'));
-})
+});
 
+app.use('*/css',express.static('public/css'));

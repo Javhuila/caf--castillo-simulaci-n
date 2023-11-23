@@ -1,0 +1,68 @@
+<style>
+    .grafic-001 {
+        width: 578px;
+    }
+
+    .color-text-white {
+        color: white!important;
+    }
+</style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #5e2129; color:white">
+    <div class="container-fluid">
+        <a class="navbar-brand color-text-white" href="/cafecastillo/listcastillo">Café Castillo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active color-text-white" aria-current="page" href="/ini/nuevo-data">Ingresar nuevo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-text-white" href="/ini/control">Control</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-text-white" href="/ini/iniciar-sesion">Cerrar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <center>
+                <h1>Datos del Ambiente</h1>
+            </center>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Mes</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Nombre del Registro</label>
+                    <input type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Factores</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Café Castillo">
+                </div>
+                <div class="col-12 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
